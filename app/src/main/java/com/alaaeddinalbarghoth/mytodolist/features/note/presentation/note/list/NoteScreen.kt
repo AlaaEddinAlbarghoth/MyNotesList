@@ -13,9 +13,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
+import com.alaaeddinalbarghoth.mytodolist.core.util.TestTags
 import com.alaaeddinalbarghoth.mytodolist.features.note.presentation.note.list.components.NoteItem
 import com.alaaeddinalbarghoth.mytodolist.features.note.presentation.note.list.components.OrderSection
 import com.alaaeddinalbarghoth.mytodolist.utils.Screen
@@ -40,7 +42,7 @@ fun NoteScreen(
                 },
                 backgroundColor = MaterialTheme.colors.primary
             ) {
-                Icon(imageVector = Icons.Default.Add, contentDescription = "Add note")
+                Icon(imageVector = Icons.Default.Add, contentDescription = "Add Note")
             }
         },
         scaffoldState = scaffoldState
@@ -75,7 +77,8 @@ fun NoteScreen(
                 OrderSection(
                     modifier = Modifier
                         .fillMaxWidth()
-                        .padding(vertical = 16.dp),
+                        .padding(vertical = 16.dp)
+                        .testTag(TestTags.ORDER_SECTION),
                     noteOrder = state.noteOrder,
                     onOrderChange = {
                         viewModel.onEvent(NotesEvent.Order(it))

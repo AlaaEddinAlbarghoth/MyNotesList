@@ -14,7 +14,7 @@ android {
         versionCode = 1
         versionName = "1.0"
 
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.alaaeddinalbarghoth.mytodolist.HiltTestRunner"
         vectorDrawables {
             useSupportLibrary = true
         }
@@ -101,7 +101,6 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1")
     testImplementation("com.google.truth:truth:1.1.3")
     testImplementation("com.squareup.okhttp3:mockwebserver:4.9.1")
-    testImplementation("io.mockk:mockk:1.10.5")
     debugImplementation("androidx.compose.ui:ui-test-manifest:1.1.0-rc01")
 
     // Instrumentation tests)
@@ -116,4 +115,7 @@ dependencies {
     androidTestImplementation("com.squareup.okhttp3:mockwebserver:4.9.1")
     androidTestImplementation("io.mockk:mockk-android:1.10.5")
     androidTestImplementation("androidx.test:runner:1.4.0")
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
+    androidTestImplementation("com.linkedin.dexmaker:dexmaker-mockito:2.28.1"
+    )
 }
