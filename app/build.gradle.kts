@@ -72,6 +72,7 @@ dependencies {
     implementation("androidx.navigation:navigation-compose:2.4.0-rc01")
     implementation("androidx.compose.material:material-icons-extended:$composeVersion")
     implementation("androidx.hilt:hilt-navigation-compose:1.0.0-rc01")
+    debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
 
     // Coroutines
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
@@ -93,10 +94,26 @@ dependencies {
     // Kotlin Extensions and Coroutines support for Room
     implementation("androidx.room:room-ktx:2.4.0")
 
-    // Test
+    // Local unit tests)
+    testImplementation("androidx.test:core:1.4.0")
     testImplementation("junit:junit:4.13.2")
+    testImplementation("androidx.arch.core:core-testing:2.1.0")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1")
+    testImplementation("com.google.truth:truth:1.1.3")
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.9.1")
+    testImplementation("io.mockk:mockk:1.10.5")
+    debugImplementation("androidx.compose.ui:ui-test-manifest:1.1.0-rc01")
+
+    // Instrumentation tests)
+    androidTestImplementation("com.google.dagger:hilt-android-testing:2.37")
+    kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.40.5")
+    androidTestImplementation("junit:junit:4.13.2")
+    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.5.1")
+    androidTestImplementation("androidx.arch.core:core-testing:2.1.0")
+    androidTestImplementation("com.google.truth:truth:1.1.3")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
-    androidTestImplementation("androidx.compose.ui:ui-test-junit4:$composeVersion")
-    debugImplementation("androidx.compose.ui:ui-tooling:$composeVersion")
+    androidTestImplementation("androidx.test:core-ktx:1.4.0")
+    androidTestImplementation("com.squareup.okhttp3:mockwebserver:4.9.1")
+    androidTestImplementation("io.mockk:mockk-android:1.10.5")
+    androidTestImplementation("androidx.test:runner:1.4.0")
 }
